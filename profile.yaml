@@ -1,0 +1,20 @@
+# Investor profile: early 20s, long horizon, core + small AI-driven satellite.
+# Sim equivalent of $6k/yr: create an Investopedia game with $6,000 starting cash.
+name: young_long_horizon_growth
+starting_cash: 6000            # paper broker only
+monthly_core_buy_usd: 425      # DCA-style core purchase per run
+core:
+  symbol: VT                   # US-listed global all-equity ETF (XEQT/VEQT are TSX-only)
+  target_pct: 85
+satellite:
+  target_pct: 15
+  max_position_pct: 5          # of total equity
+  max_positions: 5
+  max_trades_per_month: 2
+  min_confidence: 0.65
+  min_hold_days: 90            # applies to AI-discretionary sells only
+  stop_loss_pct: 20            # sell all if down this much vs cost (always allowed)
+  trim_above_pct: 8            # trim back to max_position_pct if a position grows past this
+watchlist: [MSFT, NVDA, GOOGL, AMZN, COST, V, ASML, TSM, LLY, JPM]
+auto_approve: false            # true = no prompt (simulator only)
+model: claude-sonnet-5-5

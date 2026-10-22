@@ -1,0 +1,5 @@
+anthropic
+yfinance
+pyyaml
+requests
+ratelimit
